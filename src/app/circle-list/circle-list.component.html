@@ -1,0 +1,13 @@
+<div class="circle-wrapper" *ngFor="let circle of circles;let idx = index">
+  <div>Circle number {{idx+1}}:
+    <p>X: {{circle.x}}</p>
+    <p>Y: {{circle.y}}</p>
+    <p>Radius: {{circle.r}}</p>
+  </div>
+</div>
+  <input type="number" placeholder="X" [(ngModel)]="newCircle.x"/>
+  <input type="number" placeholder="X" [(ngModel)]="newCircle.y"/>
+  <input type="number" placeholder="X" [(ngModel)]="newCircle.r"/>
+  <button (click)="addCircle()">Add Circle</button>
+
+
