@@ -13,8 +13,8 @@ export class Circle {
     if (this.x === circle.x || this.y === circle.y) { // check if circle axis are equals to current circle instance
       return true;
     }
-    let dimension = ((this.x-circle.x)^2) + ((this.y-circle.y)^2);
+    let d = ((this.x-circle.x)^2) + ((this.y-circle.y)^2);
 
-    return (dimension <= (circle.r^2));
+    return (d <= (circle.r^2));
   }
 }
