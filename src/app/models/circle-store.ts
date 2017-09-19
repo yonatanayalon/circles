@@ -7,7 +7,7 @@ export class CircleStore {
   }
 
   private isOverlapping(currentCircle: Circle, targetCircle: Circle): boolean {
-    if (currentCircle.x === targetCircle.x || currentCircle.y === targetCircle.y) { // check if targetCircle axis are equals to currentCircle
+    if (currentCircle.x === targetCircle.x && currentCircle.y === targetCircle.y) { // check if targetCircle axis are equals to currentCircle
       return true;
     }
 
