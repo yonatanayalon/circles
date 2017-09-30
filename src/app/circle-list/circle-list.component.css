@@ -1,0 +1,31 @@
+.circles-wrapper {
+  border: 1pt solid #d69d9d;
+  height: 400pt;
+  position: relative;
+}
+.circle-wrapper {
+  border: 1pt solid #C4C4C4;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0.5;
+  background: #ccc;
+  left: 50%;
+  top: 50%;
+  width: 300pt;
+  height: 300pt;
+  box-sizing: border-box;
+}
+
+.inner-circle-wrapper {
+
+
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+.circle-wrapper.is-overlap {
+  border: 1pt solid red;
+  background: #d69d9d;
+}
+

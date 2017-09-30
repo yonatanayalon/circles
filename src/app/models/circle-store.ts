@@ -1,29 +1,32 @@
 import {Circle} from './circle';
 
-export class CircleStore {
+export class CircleStore extends Circle {
+  overlappingCircles: Array<Circle[]> = [];
+  constructor() {
+    super();
+  }
   circles: Circle[] = [];
+
   addCircle(circle: Circle) {
     this.circles.push(circle);
   }
 
-  private isOverlapping(currentCircle: Circle, targetCircle: Circle): boolean {
-    if (currentCircle.x === targetCircle.x && currentCircle.y === targetCircle.y) { // check if targetCircle axis are equals to currentCircle
-      return true;
-    }
-
-    const d = ((currentCircle.x - targetCircle.x) ^ 2) + ((currentCircle.y - targetCircle.y) ^ 2);
-
-    return (d <= (targetCircle.r ^ 2));
-  }
   getOverlapingCircles(circle: Circle): Circle[] {
     const currentCircle = circle;
     const overlappingCircles = [];
+
+    if (this.overlappingCircles[circle.id]) {
+      return this.overlappingCircles[circle.id];
+    }
+
     for (let i = 0; i < this.circles.length; i++) {
-      const circle = this.circles[i];
-      if (currentCircle !== circle) {
-        const isOverlapping = this.isOverlapping(currentCircle, circle);
+      const circleInStore = this.circles[i];
+      if (currentCircle !== circleInStore) {
+        const isOverlapping = currentCircle.isOverlapping(circleInStore);
         if (isOverlapping) {
-          overlappingCircles.push(circle);
+          overlappingCircles.push(circleInStore);
+          this.overlappingCircles[circle.id] = this.overlappingCircles[circle.id] ? this.overlappingCircles[circle.id] : [];
+          this.overlappingCircles[circle.id].push(circleInStore);
         }
       }
     }

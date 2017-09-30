@@ -1,0 +1,9 @@
+<div class="circles-wrapper">
+  <div [ngStyle]="{'width':((circle.r*2))+'pt','height':((circle.r*2))+'pt','margin-left':((-circle.r + circle.x))+'pt', 'margin-top':((-circle.r-circle.y))+'pt'}" class="circle-wrapper" [ngClass]="{'is-overlap':circle.isOverlap}" *ngFor="let circle of circles;let idx = index"></div>
+</div>
+<input type="number" placeholder="X" [(ngModel)]="newCircle.x"/>
+<input type="number" placeholder="Y" [(ngModel)]="newCircle.y"/>
+<input type="number" placeholder="R" [(ngModel)]="newCircle.r"/>
+<button (click)="addCircle()">Add Circle</button>
+
+

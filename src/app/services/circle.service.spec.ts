@@ -3,6 +3,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { CircleStoreService } from './circle.service';
 import { Circle } from '../models/circle';
 import { CircleStore } from '../models/circle-store';
+import {CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 
 
 describe('CircleStoreService', () => {
@@ -13,7 +14,8 @@ describe('CircleStoreService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [CircleStoreService]
+      providers: [CircleStoreService, CircleStore],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     });
     circle1 = new Circle(100, 200, 60);
     circle2 = new Circle(10, 20, 60);
@@ -100,7 +102,7 @@ describe('CircleStoreService', () => {
     let startTime: any;
     let endTime: any;
     let runningTime: Number;
-    const maxRunningTimeMilliseconds = 20;
+    const maxRunningTimeMilliseconds = 30;
     const numberOfCirclesToCreate = 1000000;
 
     for (let i = 0; i < numberOfCirclesToCreate; i++) {
