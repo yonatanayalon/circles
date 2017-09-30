@@ -15,9 +15,9 @@ export class Circle {
   }
 
   isOverlapping(circle: Circle) {
-    const minusRaduis = Math.abs((this.r - circle.r) ^ 2);
-    const sumAxis = Math.abs((this.x - circle.x) ^ 2) + ((this.y - circle.y) ^ 2);
-    const plusRaduis = Math.abs((this.r + circle.r) ^ 2);
+    const minusRaduis = Math.pow((this.r - circle.r),2);
+    const sumAxis = Math.pow((this.x - circle.x), 2) + Math.pow((this.y - circle.y), 2);
+    const plusRaduis = Math.pow((this.r + circle.r), 2);
 
     if (this.x === circle.x && this.y === circle.y) { // check if circle center is tha same
       return true;

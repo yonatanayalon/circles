@@ -11,7 +11,7 @@ import { CircleStoreService } from '../services/circle.service';
 })
 export class CircleListComponent implements OnInit {
   circles: Circle[];
-  newCircle: Circle = new Circle();
+  newCircle: Circle = new Circle(0,0,30);
   constructor(private circleStoreService: CircleStoreService) { }
 
   ngOnInit() {

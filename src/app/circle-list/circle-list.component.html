@@ -3,7 +3,7 @@
 </div>
 <input type="number" placeholder="X" [(ngModel)]="newCircle.x"/>
 <input type="number" placeholder="Y" [(ngModel)]="newCircle.y"/>
-<input type="number" placeholder="R" [(ngModel)]="newCircle.r"/>
+<input min="1" type="number" placeholder="R" [(ngModel)]="newCircle.r"/>
 <button (click)="addCircle()">Add Circle</button>
 
 
