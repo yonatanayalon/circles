@@ -4,6 +4,7 @@
   position: relative;
 }
 .circle-wrapper {
+  display: table;
   border: 1pt solid #C4C4C4;
   border-radius: 50%;
   position: absolute;
@@ -15,10 +16,17 @@
   height: 300pt;
   box-sizing: border-box;
 }
+.circle-wrapper .axis-points {
+  text-align: center;
+  margin: 0 auto;
+  vertical-align: middle;
+  display: table-cell;
+  text-shadow: 6px 7px 4px #7e7ebd;
+  color: #2f1118;
+  font-weight: bold;
+}
 
 .inner-circle-wrapper {
-
-
   border-radius: 50%;
   text-align: center;
   vertical-align: middle;
@@ -28,4 +36,24 @@
   border: 1pt solid red;
   background: #d69d9d;
 }
+
+.axis {
+  position: absolute;
+  height: 100%;
+  left: 0;
+  width: 5px;
+  background: #C4C4C4;
+}
+.x-axis {
+  top: 50%;
+  height: 5px;
+  width: 100%;
+  margin-top: -2.5px;
+}
+
+.y-axis {
+  left: 50%;
+  margin-left: -2.5px;
+}
+
 

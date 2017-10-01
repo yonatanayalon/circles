@@ -1,5 +1,13 @@
 <div class="circles-wrapper">
-  <div [ngStyle]="{'width':((circle.r*2))+'pt','height':((circle.r*2))+'pt','margin-left':((-circle.r + circle.x))+'pt', 'margin-top':((-circle.r-circle.y))+'pt'}" class="circle-wrapper" [ngClass]="{'is-overlap':circle.isOverlap}" *ngFor="let circle of circles;let idx = index"></div>
+  <div class="axis x-axis"></div>
+  <div class="axis y-axis"></div>
+  <div [ngStyle]="{'width':((circle.r*2))+'pt','height':((circle.r*2))+'pt','margin':((-circle.r-circle.y))+'pt 0 0 '+((-circle.r + circle.x))+'pt'}" class="circle-wrapper" [ngClass]="{'is-overlap':circle.isOverlap}" *ngFor="let circle of circles;let idx = index">
+    <div class="axis-points">
+      <span>X: {{circle.x}}</span>
+      <span>Y: {{circle.y}}</span>
+      <span>R: {{circle.r}}</span>
+    </div>
+  </div>
 </div>
 <input type="number" placeholder="X" [(ngModel)]="newCircle.x"/>
 <input type="number" placeholder="Y" [(ngModel)]="newCircle.y"/>

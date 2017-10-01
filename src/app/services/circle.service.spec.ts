@@ -96,18 +96,18 @@ describe('CircleStoreService', () => {
 
   });
 
-  it('CircleStore getOverlapingCircles - check running time of getOverlapingCircles method', () => {
+  it('CircleStore getOverlapingCircles - add 1000000 overlapping circles & check running time of getOverlapingCircles method', () => {
     const circleStore = new CircleStore();
     const circles: Circle[] = circleStore.circles;
     let startTime: any;
     let endTime: any;
     let runningTime: Number;
-    const maxRunningTimeMilliseconds = 30;
+    const maxRunningTimeMilliseconds = 0;
     const numberOfCirclesToCreate = 1000000;
 
     for (let i = 0; i < numberOfCirclesToCreate; i++) {
       const randNumber = (Math.random());
-      const circle = new Circle(randNumber, randNumber + 1, randNumber + 2);
+      const circle = new Circle(100, 200, 60);
       circleStore.addCircle(circle);
     }
 
