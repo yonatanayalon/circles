@@ -14,15 +14,15 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
 ## Folders \ Files Explanation
-### app\models (app classes / models) => 
+### app\models (app classes / models) 
 1. circle.ts (Circle Class)
 2. circle-store.ts (CircleStore Class)
 
-### app\services (app services) => 
+### app\services (app services) 
 1. circle.service.ts (Service that provide API communication with Circle & CircleStore APIs)
 2. circle.service.spec.ts (UniTest file for circle Service)
 
-### app\circle-list (CircleList component - UI - render circles on screen) => 
+### app\circle-list (CircleList component - UI - render circles on screen) 
 1. circle-list.component.ts (Circle List Controller)
 2. circle-list.component.html (HTML)
 3. circle-list.component.css (CSS)
